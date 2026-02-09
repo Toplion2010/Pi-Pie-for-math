@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi-Pie — Math Week | A small pie for a big number π</title>
+    <meta name="description" content="Pi-Pie: a Math Week project about the number π, academic motivation, and readiness to improve. By a student of BIL School.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header id="hero" class="hero" role="banner">
+        <!-- Animated background blobs -->
+        <div class="hero-blobs" aria-hidden="true">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="container hero-inner">
+            <div class="hero-animation" aria-hidden="true">
+                <canvas id="piCanvas" width="300" height="300"></canvas>
+            </div>
+            <div class="hero-content" id="heroContent">
+                <h1 class="hero-title">
+                    Pi-Pie <span class="hero-dash">&mdash;</span> a small pie for a big number <span class="pi-accent">π</span>
+                </h1>
+                <p class="hero-subtitle">
+                    The number π connects circles. This project is my contribution to Math Week.
+                </p>
+            </div>
+        </div>
+
+        <div class="scroll-hint" id="scrollHint" aria-hidden="true">
+            <span class="scroll-hint-text">scroll</span>
+            <svg width="20" height="28" viewBox="0 0 20 28">
+                <rect x="1" y="1" width="18" height="26" rx="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <circle class="scroll-dot" cx="10" cy="8" r="2" fill="currentColor"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Wave divider -->
+    <div class="wave-divider wave-hero" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,40 C360,0 720,60 1080,20 C1260,0 1380,30 1440,20 L1440,60 L0,60 Z" fill="var(--bg)"/>
+        </svg>
+    </div>
+
+    <main role="main">
+
+        <!-- ============ TEACHER ============ -->
+        <section id="teacher" class="section section--teal reveal" aria-label="About the teacher">
+            <div class="container">
+                <div class="section-decorator" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <h2 class="section-title">About Tynyshbek agai</h2>
+                <div class="card teacher-card">
+                    <div class="card-accent-top accent-teal" aria-hidden="true"></div>
+                    <div class="teacher-photo-wrap">
+                        <img src="teacher.jpg" alt="Tynyshbek agai" class="teacher-photo" width="140" height="140">
+                    </div>
+                    <p class="section-text">
+                        Tynyshbek agai &mdash; Algebra &amp; Geometry teacher at BIL School; silver medalist in the national mathematics olympiad.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ACHIEVEMENTS ============ -->
+        <section id="achievements" class="section section--warm reveal" aria-label="Academic achievements">
+            <div class="container">
+                <div class="section-decorator" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <h2 class="section-title">Academic path</h2>
+                <p class="section-intro">
+                    At the moment, I am preparing to study abroad, specifically in the United States.
+                </p>
+
+                <div class="achievements-grid" id="achievementsGrid">
+                    <article class="achievement-card" aria-label="Silver Medal">
+                        <div class="card-accent-top accent-silver" aria-hidden="true"></div>
+                        <div class="achievement-badge" aria-hidden="true">
+                            <svg viewBox="0 0 56 56" width="56" height="56">
+                                <circle cx="28" cy="28" r="26" fill="none" stroke="url(#silverGrad)" stroke-width="2.5"/>
+                                <text x="28" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#94A3B8">2</text>
+                                <defs><linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#94A3B8"/><stop offset="100%" stop-color="#CBD5E1"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-title">Silver Medal</h3>
+                        <p class="achievement-desc">Stanford International Logic Olympiad 2025</p>
+                    </article>
+
+                    <article class="achievement-card" aria-label="Gold Medal">
+                        <div class="card-accent-top accent-gold" aria-hidden="true"></div>
+                        <div class="achievement-badge" aria-hidden="true">
+                            <svg viewBox="0 0 56 56" width="56" height="56">
+                                <circle cx="28" cy="28" r="26" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+                                <text x="28" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#F59E0B">1</text>
+                                <defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-title">Gold Medal</h3>
+                        <p class="achievement-desc">Math Without Borders (Bulgaria)</p>
+                    </article>
+
+                    <article class="achievement-card" aria-label="Top 20">
+                        <div class="card-accent-top accent-cyan" aria-hidden="true"></div>
+                        <div class="achievement-badge" aria-hidden="true">
+                            <svg viewBox="0 0 56 56" width="56" height="56">
+                                <circle cx="28" cy="28" r="26" fill="none" stroke="url(#cyanGrad)" stroke-width="2.5"/>
+                                <text x="28" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#3EC1D3">20</text>
+                                <defs><linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3EC1D3"/><stop offset="100%" stop-color="#67E8F9"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-title">Top-20</h3>
+                        <p class="achievement-desc">Republican Chess Championship</p>
+                    </article>
+
+                    <article class="achievement-card" aria-label="Winner">
+                        <div class="card-accent-top accent-coral" aria-hidden="true"></div>
+                        <div class="achievement-badge" aria-hidden="true">
+                            <svg viewBox="0 0 56 56" width="56" height="56">
+                                <circle cx="28" cy="28" r="26" fill="none" stroke="url(#coralGrad)" stroke-width="2.5"/>
+                                <text x="28" y="33" text-anchor="middle" font-size="16" font-weight="700" fill="#FF6B6B">&lt;/&gt;</text>
+                                <defs><linearGradient id="coralGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B6B"/><stop offset="100%" stop-color="#FCA5A5"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-title">Winner</h3>
+                        <p class="achievement-desc">CodeHackathon</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CURRENT SITUATION ============ -->
+        <section id="situation" class="section section--light reveal" aria-label="Current academic situation">
+            <div class="container">
+                <div class="section-decorator" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <h2 class="section-title">Current situation</h2>
+                <div class="card situation-card">
+                    <p class="section-text">
+                        This academic year, for the first two terms, I received lower grades than usual.
+                    </p>
+                    <div class="grades-row" aria-label="Grades received">
+                        <span class="grade-badge grade-algebra">
+                            <span class="grade-label">Algebra</span>
+                            <span class="grade-value">4</span>
+                        </span>
+                        <span class="grade-badge grade-geometry">
+                            <span class="grade-label">Geometry</span>
+                            <span class="grade-value">4</span>
+                        </span>
+                    </div>
+                    <p class="section-text section-text--muted">
+                        Previously, I consistently received the highest grades. These results are important for my future academic plans.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ READINESS ============ -->
+        <section id="readiness" class="section section--gradient reveal" aria-label="Readiness to improve">
+            <div class="container">
+                <div class="section-decorator decorator--light" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <h2 class="section-title section-title--light">Readiness to improve</h2>
+                <div class="card readiness-card">
+                    <div class="card-accent-top accent-gradient" aria-hidden="true"></div>
+                    <p class="section-text">
+                        I appreciate the opportunity to improve my results. I am prepared to complete additional assignments, tests, and projects to demonstrate my competence.
+                    </p>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CTA ============ -->
+        <section id="cta" class="section section--cta reveal" aria-label="Call to action">
+            <div class="container cta-container">
+                <button id="ctaButton" class="cta-button" type="button" aria-haspopup="dialog">
+                    Offer an optional assignment
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>Thank you for your time and attention.</p>
+        </div>
+    </footer>
+
+    <!-- ============ MODAL ============ -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close dialog">&times;</button>
+            <h2 class="modal-title" id="modalTitle">Offer an assignment</h2>
+            <form id="assignmentForm" class="modal-form">
+                <div class="form-group">
+                    <label for="formName">Name</label>
+                    <input type="text" id="formName" name="name" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="formEmail">Email</label>
+                    <input type="email" id="formEmail" name="email" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="formDesc">Task description</label>
+                    <textarea id="formDesc" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="formDeadline">Deadline</label>
+                    <input type="date" id="formDeadline" name="deadline" required>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
