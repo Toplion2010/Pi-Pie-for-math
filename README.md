@@ -1,21 +1,25 @@
 # Pi-Pie — Math Week Story Website
 
-Профессиональный одностраничный сайт для Недели математики с анимированным storytelling.
+A professional one-page website for Math Week with animated storytelling.
+The main goal of this site was to get a 5 from my math teacher because he gave me a not-so-good grade last term (
 
-## 🎯 Цель проекта
+## 🎯 Project Goal
 
-Создать академически строгую презентацию, которая:
-- Показывает мотивацию и дисциплинированность студента
-- Представляет достижения и планы на обучение за рубежом
-- Выражает готовность выполнить дополнительные задания для улучшения оценок
-- Уважительно обращается к преподавателю математики
+Create an academically serious presentation that:
 
-## 🚀 Запуск проекта
+* Shows the student’s motivation and discipline
+* Presents achievements and plans for studying abroad
+* Expresses willingness to complete extra assignments to improve grades
+* Addresses the math teacher respectfully
 
-### Простой способ (двойной клик)
-Откройте файл `index.html` в любом современном браузере.
+## 🚀 How to run the project
 
-### Локальный сервер (рекомендуется)
+### Simple way (double-click)
+
+Open `index.html` in any modern browser.
+
+### Local server (recommended)
+
 ```bash
 # Python 3
 python3 -m http.server 8000
@@ -23,115 +27,131 @@ python3 -m http.server 8000
 # Python 2
 python -m SimpleHTTPServer 8000
 
-# Node.js (если установлен)
+# Node.js (if installed)
 npx serve
 
-# Затем откройте: http://localhost:8000
+# Then open: http://localhost:8000
 ```
 
-## 📁 Структура проекта
+## 📁 Project structure
 
 ```
 Pi-Pie_for_math/
-├── index.html      # Основная HTML-структура
-├── styles.css      # Стили и анимации
-├── script.js       # JavaScript функциональность
-└── README.md       # Документация
+├── index.html      # Main HTML structure
+├── styles.css      # Styles and animations
+├── script.js       # JavaScript functionality
+└── README.md       # Documentation
 ```
 
-## ✨ Основные возможности
+## ✨ Key features
 
-### 1. **Анимация Pie → π**
-- Плавная 5-секундная анимация при загрузке страницы
-- Пирог (pie) визуально трансформируется в символ π
-- Автоматически отключается при `prefers-reduced-motion`
+### 1. **Pie → π animation**
 
-### 2. **Scroll-анимации**
-- Секции плавно появляются при прокрутке
-- Карточки достижений появляются поочерёдно (staggered)
-- Использует `IntersectionObserver` для производительности
+* Smooth 5-second animation on page load
+* Pie visually transforms into the π symbol
+* Automatically disables if `prefers-reduced-motion` is set
 
-### 3. **Модальное окно формы**
-- Кнопка "Предложить задание"
-- Форма с валидацией
-- Поля: Имя, Email, Описание задания, Дедлайн
-- Закрывается по клику вне окна или клавише ESC
+### 2. **Scroll animations**
 
-### 4. **Респект к доступности**
-- Semantic HTML5
-- ARIA-атрибуты
-- Поддержка `prefers-reduced-motion`
-- Keyboard navigation
+* Sections smoothly appear on scroll
+* Achievement cards appear in a staggered sequence
+* Uses `IntersectionObserver` for performance
 
-### 5. **Responsive дизайн**
-- Mobile-first подход
-- Адаптация для планшетов и телефонов
-- Flexible typography (clamp)
+### 3. **Modal form**
 
-## 🎨 Дизайн-система
+* "Suggest an assignment" button
+* Form with validation
+* Fields: Name, Email, Assignment description, Deadline
+* Closes by clicking outside the modal or pressing ESC
 
-### Цветовая палитра
-- **Фон:** `#FFF8F0` (кремовый)
-- **Текст:** `#14213D` (тёмно-синий)
-- **Акцент:** `#2B3A67` (для заголовков и π)
-- **CTA:** `#FF6B6B` (кнопки)
-- **Вспомогательный:** `#6B7280` (muted text)
-- **Карточки:** `#FFFFFF` (белый)
+### 4. **Respect for accessibility**
 
-### Типографика
-- **UI:** Inter (400, 500, 600, 700)
-- **Акценты:** Merriweather (700)
-- Google Fonts загружаются автоматически
+* Semantic HTML5
+* ARIA attributes
+* Support for `prefers-reduced-motion`
+* Keyboard navigation
 
-### Тени и скругления
-- Border radius: `12px`
-- Shadow: `0 6px 18px rgba(20,33,61,0.08)`
+### 5. **Responsive design**
 
-## 🔧 Настройка формы
+* Mobile-first approach
+* Adaptation for tablets and phones
+* Flexible typography (clamp)
 
-### Отправка на email
-В файле `script.js` (строка ~170) найдите:
+## 🎨 Design system
+
+### Color palette
+
+* **Background:** `#FFF8F0` (cream)
+* **Text:** `#14213D` (dark blue)
+* **Accent:** `#2B3A67` (for headings and π)
+* **CTA:** `#FF6B6B` (buttons)
+* **Auxiliary:** `#6B7280` (muted text)
+* **Cards:** `#FFFFFF` (white)
+
+### Typography
+
+* **UI:** Inter (400, 500, 600, 700)
+* **Accents:** Merriweather (700)
+  Google Fonts load automatically
+
+### Shadows and radii
+
+* Border radius: `12px`
+* Shadow: `0 6px 18px rgba(20,33,61,0.08)`
+
+## 🔧 Form setup
+
+### Send to email
+
+In `script.js` (around line ~170) find:
+
 ```javascript
 const mailtoLink = `mailto:teacher@example.com?subject=${subject}&body=${body}`;
 ```
 
-Замените `teacher@example.com` на реальный email преподавателя.
+Replace `teacher@example.com` with the real email of the teacher.
 
-### Серверная обработка
-Для полноценной отправки формы интегрируйте:
-- **Formspree:** https://formspree.io/
-- **EmailJS:** https://www.emailjs.com/
-- Свой backend (Node.js, PHP, Python)
+### Server-side handling
 
-## 📱 Поддержка браузеров
+For full form submission, integrate:
 
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-- ✅ Мобильные браузеры (iOS Safari, Chrome Mobile)
+* **Formspree:** [https://formspree.io/](https://formspree.io/)
+* **EmailJS:** [https://www.emailjs.com/](https://www.emailjs.com/)
+* Your own backend (Node.js, PHP, Python)
 
-## 🛠️ Технологии
+## 📱 Browser support
 
-- HTML5 (Semantic)
-- CSS3 (Custom Properties, Grid, Flexbox)
-- Vanilla JavaScript (ES6+)
-- IntersectionObserver API
-- SVG animations
-- Google Fonts
+* ✅ Chrome 90+
+* ✅ Firefox 88+
+* ✅ Safari 14+
+* ✅ Edge 90+
+* ✅ Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 📝 Кастомизация контента
+## 🛠️ Technologies
 
-### Изменить тексты
-Откройте `index.html` и редактируйте содержимое секций:
-- Hero (строки 18-30)
-- Teacher (строки 34-43)
-- Achievements (строки 47-79)
-- Current Situation (строки 83-94)
-- Readiness (строки 98-111)
+* HTML5 (Semantic)
+* CSS3 (Custom Properties, Grid, Flexbox)
+* Vanilla JavaScript (ES6+)
+* IntersectionObserver API
+* SVG animations
+* Google Fonts
 
-### Изменить достижения
-В секции `#achievements` (строки 52-77):
+## 📝 Content customization
+
+### Edit texts
+
+Open `index.html` and edit the section contents:
+
+* Hero (lines 18–30)
+* Teacher (lines 34–43)
+* Achievements (lines 47–79)
+* Current Situation (lines 83–94)
+* Readiness (lines 98–111)
+
+### Edit achievements
+
+In the `#achievements` section (lines 52–77):
+
 ```html
 <div class="achievement-card reveal-card" style="--delay: 0">
     <div class="achievement-icon">🥈</div>
@@ -140,61 +160,68 @@ const mailtoLink = `mailto:teacher@example.com?subject=${subject}&body=${body}`;
 </div>
 ```
 
-### Изменить цвета
-В `styles.css` (строки 2-11) измените CSS-переменные:
+### Change colors
+
+In `styles.css` (lines 2–11) change the CSS variables:
+
 ```css
 :root {
-  --bg: #FFF8F0;      /* фон */
-  --text: #14213D;    /* основной текст */
-  --accent: #2B3A67;  /* заголовки */
-  --cta: #FF6B6B;     /* кнопки */
+  --bg: #FFF8F0;      /* background */
+  --text: #14213D;    /* main text */
+  --accent: #2B3A67;  /* headings */
+  --cta: #FF6B6B;     /* buttons */
 }
 ```
 
-## 🎓 Рекомендации по использованию
+## 🎓 Usage recommendations
 
-1. **Перед показом преподавателю:**
-   - Проверьте все тексты на орфографию
-   - Убедитесь, что email в форме корректный
-   - Протестируйте на мобильном устройстве
+1. **Before showing the teacher:**
 
-2. **Демонстрация:**
-   - Откройте сайт заранее (для прогрузки шрифтов)
-   - Покажите на большом экране или проекторе
-   - Прокрутите плавно, чтобы показать все анимации
+   * Check all texts for spelling
+   * Make sure the email in the form is correct
+   * Test on a mobile device
 
-3. **Для Math Week:**
-   - Можно разместить QR-код на стенде
-   - Опубликовать на GitHub Pages (бесплатный хостинг)
-   - Поделиться ссылкой в школьных чатах
+2. **Demonstration:**
 
-## 🌐 Публикация онлайн
+   * Open the site in advance (to preload fonts)
+   * Show it on a large screen or projector
+   * Scroll smoothly to reveal the animations
 
-### GitHub Pages (бесплатно)
+3. **For Math Week:**
+
+   * Place a QR code at your booth
+   * Publish on GitHub Pages (free hosting)
+   * Share the link in school chats
+
+## 🌐 Publishing online
+
+### GitHub Pages (free)
+
 ```bash
-# 1. Создайте репозиторий на GitHub
-# 2. Загрузите файлы
+# 1. Create a repository on GitHub
+# 2. Upload files
 git init
 git add .
 git commit -m "Initial commit: Pi-Pie website"
 git branch -M main
-git remote add origin https://github.com/ВАШ_USERNAME/pi-pie.git
+git remote add origin https://github.com/YOUR_USERNAME/pi-pie.git
 git push -u origin main
 
-# 3. В настройках репозитория → Pages → Source: main branch
-# Ваш сайт будет доступен по адресу:
-# https://ВАШ_USERNAME.github.io/pi-pie/
+# 3. In repo settings → Pages → Source: main branch
+# Your site will be available at:
+# https://YOUR_USERNAME.github.io/pi-pie/
 ```
 
-### Netlify Drop (самый простой)
-1. Зайдите на https://app.netlify.com/drop
-2. Перетащите папку с проектом
-3. Получите мгновенную ссылку
+### Netlify Drop (easiest)
 
-## 📞 Поддержка
+1. Go to [https://app.netlify.com/drop](https://app.netlify.com/drop)
+2. Drag-and-drop the project folder
+3. Get an instant link
 
-Если нужна помощь с настройкой или кастомизацией — обращайтесь!
+## 📞 Support
+
+If you need help with setup or customization — reach out!
 
 ---
 
-**Удачи на Неделе математики! 🎓📐**
+**Good luck at Math Week! 🎓📐**
